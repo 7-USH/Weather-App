@@ -8,6 +8,7 @@ class CityScreen extends StatefulWidget {
 
 class _CityScreenState extends State<CityScreen> {
   @override
+  @deprecated
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
