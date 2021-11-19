@@ -20,4 +20,16 @@ class NetworkHelper {
       print(response.statusCode);
     }
   }
+
+  Future<dynamic> getCityWeatherData(String cityName) async {
+    var url = Uri.parse(
+        'https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric');
+        http.Response response = await http.get(url);
+    if (response.statusCode == 200) {
+      String data = response.body;
+      return jsonDecode(data);
+    } else {
+      print(response.statusCode);
+    }
+  }
 }
